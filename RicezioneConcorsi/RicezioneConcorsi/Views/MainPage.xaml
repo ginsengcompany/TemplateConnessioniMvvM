@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RicezioneConcorsi"
+             x:Class="RicezioneConcorsi.MainPage">
+
+    <StackLayout Orientation="Vertical">
+        <Entry Placeholder="Inserisci Username" Text="{Binding Username}"></Entry>
+        <Button Text="Avvia ricerca concorsi" Command="{Binding Ricerca}"/>
+
+        <ListView HasUnevenRows="true" ItemsSource="{Binding Concorsi}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Padding="10">
+                            <Label Text="{Binding id_concorso}"/>
+                            <Label Text="{Binding descrizione}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+
+    
+
+</ContentPage>
